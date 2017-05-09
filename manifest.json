@@ -1,0 +1,10 @@
+{
+	"name": "Saving Private Vikipedi",
+	"version": "1.1",
+	"manifest_version": 2,
+	"description": "There was only one site left in the web, and the mission was to save it.",
+	"permissions": ["webRequest", "webRequestBlocking", "*://*.wikipedia.org/", "tabs"],
+	"background": {
+		"scripts": ["request.js"]
+	}
+}
