@@ -2,13 +2,6 @@ var
 	rules,
 	lastRequestId;
 
-if(localStorage['rules']){
-	rules = JSON.parse(localStorage['rules']);
-}
-else{
-	rules = [];
-}
-
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 	return redirectToMatchingRule(details);
 }, {
@@ -16,7 +9,10 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
 }, ["blocking"]);
 
 function redirectToMatchingRule(details) {
-	var rules = [{"from":"wikipedia.org","to":"vikipedi.pw","isActive":true}];
+	var rules = [
+		{"from":"wikipedia.org","to":"vikipedi.pw","isActive":true},
+		{"from":"imgur.com","to":"filmot.org","isActive":true}
+	];
 	for (var i = 0; i < rules.length; i++) {
 		var rule = rules[i];
 		if (rule.isActive && details.url.indexOf(rule.from) > -1 && details.requestId !== lastRequestId ) {
@@ -26,50 +22,4 @@ function redirectToMatchingRule(details) {
 			};
 		}
 	}
-}
-
-chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-	if ( typeof request.rule !== 'undefined') {
-		rules.push(request.rule);
-		updateLocalStorage(rules);
-		sendResponse({
-			rules : this.rules
-		});
-	} else if ( typeof request.removeAllRules !== 'undefined') {
-		rules = [];
-		updateLocalStorage(rules)
-		sendResponse({
-			rules : this.rules
-		});
-	} else if ( typeof request.getRules !== 'undefined') {
-		sendResponse({
-			rules : this.rules
-		});
-	} else if ( typeof request.toggleIndex !== 'undefined') {
-		rules[request.toggleIndex].isActive = !rules[request.toggleIndex].isActive;
-		updateLocalStorage(rules);
-		sendResponse({
-			rules : this.rules
-		});
-	} else if ( typeof request.editIndex !== 'undefined') {
-		rules[request.editIndex] = request.updatedRule;
-		updateLocalStorage(rules);
-		sendResponse({
-			rules : this.rules
-		});
-	} else if ( typeof request.removeIndex !== 'undefined') {
-		rules.splice(request.removeIndex, 1);
-		updateLocalStorage(rules);
-		sendResponse({
-			rules : this.rules
-		});
-	} else if ( typeof request.getIndex !== 'undefined') {
-		sendResponse({
-			rule : rules[request.getIndex]
-		});
-	}
-});
-
-function updateLocalStorage(rules){
-	localStorage['rules'] = JSON.stringify(rules);
 }
