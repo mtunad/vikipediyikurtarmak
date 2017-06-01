@@ -1,6 +1,4 @@
-var 
-	rules,
-	lastRequestId;
+var rules, lastRequestId;
 
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 	return redirectToMatchingRule(details);
@@ -10,8 +8,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
 
 function redirectToMatchingRule(details) {
 	var rules = [
-		{"from":"wikipedia.org","to":"vikipedi.pw","isActive":true},
-		{"from":"imgur.com","to":"filmot.org","isActive":true}
+		{"from":"wikipedia.org","to":"vikipedi.pw","isActive":true}
 	];
 	for (var i = 0; i < rules.length; i++) {
 		var rule = rules[i];
