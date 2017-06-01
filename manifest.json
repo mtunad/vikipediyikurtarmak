@@ -4,7 +4,7 @@
 	"homepage_url": "https://chrome.google.com/webstore/detail/jbcbidnpdnjgghgdpheephnjcgbgiplo",
 	"manifest_version": 2,
 	"description": "There was only one site left in the web, and the mission was to save it.",
-	"permissions": ["webRequest", "webRequestBlocking", "*://*.wikipedia.org/",  "*://*.imgur.com/", "tabs"],
+	"permissions": ["webRequest", "webRequestBlocking", "*://*.wikipedia.org/"],
 	"background": {
 		"scripts": ["request.js"]
 	}
