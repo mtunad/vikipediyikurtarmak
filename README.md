@@ -4,12 +4,16 @@
 
 Chrome Store: https://chrome.google.com/webstore/detail/jbcbidnpdnjgghgdpheephnjcgbgiplo
 
+Firefox Marketi: https://addons.mozilla.org/en-US/firefox/addon/saving-private-vikipedi/
+
+(Android'de Firefox kullanıyorsanız, eklentiyi kurduğunuzda mobilden de Wikipedia erişiminiz kolaylaşmış olur.)
+
 Wikipedia'ya erişim engellendi. (bkz: https://twitter.com/btkbasin/status/858357916327432193) 
 
-BTK, url filtering yapamadığı için tüm vikipediyi engellemiş. Eklentiyi kullananların yasal açıdan sorunlu sayfalara girmeyeceğine inancım olduğundan bu eklentiyi yapıp, devlet büyüklerimize yardımcı olmak istedim. Bu eklenti vikipedi'ye erişimi sağlıyor.
+BTK, url filtering yapamadığı için tüm vikipediyi engellemiş. Eklentiyi kullananların yasal açıdan sorunlu sayfalara girmeyeceğine inancım olduğundan bu eklentiyi yapıp, devlet büyüklerimize yardımcı olmak istedim.
 
 ## Nasıl çalışıyor?
-Adresi wikipedia.org'tan vikipedi.pw'ye yönlendiriyor. Henüz tr'de yasaklı olmayan mirror proxy üzerinden erişmenizi sağlıyor. Telefonda vs de tr.vikipedi.pw adresinden kullanabilirsiniz. (bkz: https://eksisozluk.com/entry/68181128)
+Adresi wikipedia.org'tan vikipedi.pw'ye yönlendiriyor. Henüz Türkiye'de yasaklı olmayan mirror proxy üzerinden erişmenizi sağlıyor. Telefonda vs de tr.vikipedi.pw adresinden kullanabilirsiniz. (bkz: https://eksisozluk.com/entry/68181128)
 
 ## Ne dediler?
 
@@ -21,3 +25,6 @@ Adresi wikipedia.org'tan vikipedi.pw'ye yönlendiriyor. Henüz tr'de yasaklı ol
 
 ## İzinler
 1. wikipedia.org'da değişiklik yapabilme izni, url'e erişmeye çalıştığınızı görebilmek ve gerekli değişikliği yapabilmek için gerekli.
+
+## Ekran görüntüsü
+![Firefox on Android with extension](https://cdn.pbrd.co/images/GS4AoHd.png)
